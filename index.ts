@@ -11,6 +11,7 @@ import Connector from "./interfaces/connector.interface";
 import ConnectorInterface from "./interfaces/connector.interface";
 import CsvOptionsInterface from "./interfaces/csv.interface";
 import DatabasePackage from "./interfaces/database-package.interface";
+import DatabaseRow from "./interfaces/database-row.interface";
 import Entity from "./interfaces/entity.interface";
 import FTPInterface from "./interfaces/ftp.interface";
 import Invoice from "./interfaces/invoice.interface";
@@ -32,6 +33,7 @@ export {
   ConnectorInterface,
   CsvOptionsInterface,
   DatabasePackage,
+  DatabaseRow,
   Entity,
   FTPInterface,
   Invoice,
