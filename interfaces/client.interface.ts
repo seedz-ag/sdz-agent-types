@@ -1,4 +1,6 @@
-export default interface Client {
+import APIEntity from "./api-entity.interface";
+
+export default interface Client extends APIEntity {
   cnpjOrigemDados: number;
   dataCadastro: Date;
   dataAtualizacao: string;
