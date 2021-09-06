@@ -1,4 +1,4 @@
 export default interface Entity {
-  file: string
-	name: string
+  file: string;
+  name: string;
 }
