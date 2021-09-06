@@ -1,3 +1,4 @@
+import APIEntity from "./interfaces/api-entity.interface";
 import Client from "./interfaces/client.interface";
 import Config from "./types/config.type";
 import ConfigAuth from "./types/config.auth.type";
@@ -18,6 +19,7 @@ import Repository from "./interfaces/repository.interface";
 import RepositoryInterface from "./interfaces/repository.interface";
 
 export {
+  APIEntity,
   Client,
   Config,
   ConfigAuth,
