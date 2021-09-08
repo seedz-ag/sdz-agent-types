@@ -1,5 +1,4 @@
-import Client from "./client.interface";
-import Invoice from "./invoice.interface";
+import DatabaseRow from "./database-row.interface";
 import PaginationInterface from "./pagination.interface";
 
 export default interface Connector {
@@ -7,5 +6,5 @@ export default interface Connector {
   execute(
     query?: string,
     pagination?: PaginationInterface
-  ): Promise<Client[] | Invoice[]>;
+  ): Promise<DatabaseRow[]>;
 }
