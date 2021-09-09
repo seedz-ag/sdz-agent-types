@@ -14,6 +14,7 @@ import DatabasePackage from "./interfaces/database-package.interface";
 import DatabaseRow from "./interfaces/database-row.interface";
 import Entity from "./interfaces/entity.interface";
 import FTPInterface from "./interfaces/ftp.interface";
+import HydratorMapping from "./interfaces/hydrator-mapping.interface";
 import Invoice from "./interfaces/invoice.interface";
 import PaginationInterface from "./interfaces/pagination.interface";
 import Repository from "./interfaces/repository.interface";
@@ -36,6 +37,7 @@ export {
   DatabaseRow,
   Entity,
   FTPInterface,
+  HydratorMapping,
   Invoice,
   PaginationInterface,
   Repository,
