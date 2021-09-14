@@ -38,11 +38,7 @@ export default interface Repository {
     pagination: PaginationInterface,
     type: string
   ): Promise<DatabaseRow[]>;
-  getBilling(
-    pagination: PaginationInterface,
-    type: string
-  ): Promise<DatabaseRow[]>;
-  getBillingItem(
+  getInvoicesItem(
     pagination: PaginationInterface,
     type: string
   ): Promise<DatabaseRow[]>;
