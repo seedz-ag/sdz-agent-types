@@ -42,6 +42,10 @@ export default interface Repository {
     pagination: PaginationInterface,
     type: string
   ): Promise<DatabaseRow[]>;
+  getBillingItem(
+    pagination: PaginationInterface,
+    type: string
+  ): Promise<DatabaseRow[]>;
   getPaymentType(
     pagination: PaginationInterface,
     type: string
