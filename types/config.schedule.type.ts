@@ -1,7 +1,9 @@
 type ConfigSchedule = {
-  minute: string;
-  hour: string;
+  dayOfMonth: string;
   dayOfWeek: string;
+  hour: string;
+  minute: string;
+  month: string;
 };
 
 export default ConfigSchedule;
