@@ -1,10 +1,9 @@
 type ConfigAuthFTP = {
-  debug: boolean
-  host: string
-  password: string
-  port: number
-  privateKey?: Buffer
-  username: string
-}
+  debug: boolean;
+  host: string;
+  password: string;
+  port: number;
+  username: string;
+};
 
-export default ConfigAuthFTP
+export default ConfigAuthFTP;
