@@ -13,5 +13,6 @@ type Config = {
   database: ConfigDatabase;
   http: ConfigHttp;
   schedule: ConfigSchedule;
+  debug: boolean;
 };
 export default Config;
