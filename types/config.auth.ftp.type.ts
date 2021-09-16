@@ -1,9 +1,10 @@
 type ConfigAuthFTP = {
-  username: string
-  password: string
+  debug: boolean
   host: string
+  password: string
   port: number
   privateKey?: Buffer
+  username: string
 }
 
 export default ConfigAuthFTP
