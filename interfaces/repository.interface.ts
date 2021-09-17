@@ -6,7 +6,7 @@ export default interface Repository {
     pagination: PaginationInterface,
     type: string
   ): Promise<DatabaseRow[]>;
-  countClient(
+  countClients(
     pagination?: PaginationInterface,
     type?: string
   ): Promise<DatabaseRow[]>;
@@ -110,7 +110,7 @@ export default interface Repository {
     pagination: PaginationInterface,
     type: string
   ): Promise<DatabaseRow[]>;
-  countReceivable(
+  countAccountReceivable(
     pagination?: PaginationInterface,
     type?: string
   ): Promise<DatabaseRow[]>;
