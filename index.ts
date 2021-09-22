@@ -17,6 +17,7 @@ import FTPInterface from "./interfaces/ftp.interface";
 import HydratorMapping from "./interfaces/hydrator-mapping.interface";
 import Invoice from "./interfaces/invoice.interface";
 import PaginationInterface from "./interfaces/pagination.interface";
+import QuestionResponse from "./interfaces/question-response.interface";
 import Repository from "./interfaces/repository.interface";
 import RepositoryInterface from "./interfaces/repository.interface";
 
@@ -40,6 +41,7 @@ export {
   HydratorMapping,
   Invoice,
   PaginationInterface,
+  QuestionResponse,
   Repository,
   RepositoryInterface,
 };
