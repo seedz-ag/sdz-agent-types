@@ -138,11 +138,11 @@ export default interface Repository {
     pagination?: PaginationInterface,
     type?: string
   ): Promise<DatabaseRow[]>;
-  getTest(
+  getTests(
     pagination: PaginationInterface,
     type?: string
   ): Promise<DatabaseRow[]>;
-  countTest(
+  countTests(
     pagination?: PaginationInterface,
     type?: string
   ): Promise<DatabaseRow[]>;
