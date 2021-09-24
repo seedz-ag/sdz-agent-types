@@ -3,6 +3,7 @@ import ConfigHttp from "./config.http.type";
 import ConfigDatabase from "../interfaces/config.database.interface";
 import ConfigSchedule from "./config.schedule.type";
 import ConfigScope from "./config.scope.type";
+import ConfigFTP from "./config.ftp.type";
 
 export type { default as ConfigAuth } from "./config.auth.type";
 export type { default as ConfigFTP } from "./config.ftp.type";
@@ -18,6 +19,7 @@ type Config = {
   schedule: ConfigSchedule;
   pageSize: number;
   scope: ConfigScope;
+  ftp: ConfigFTP;
 };
 
 export default Config;

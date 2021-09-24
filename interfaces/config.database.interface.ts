@@ -1,11 +1,11 @@
 import DatabaseDrivers from "../enums/database_drivers.enum";
 export default interface ConfigDatabaseInterface {
-  collation: string;
   driver: DatabaseDrivers;
+  host: string;
+  locale: string;
+  schema: string;
   password: string;
   port: number;
   server: string;
   username: string;
-  host: string;
-  locale: string;
 }
