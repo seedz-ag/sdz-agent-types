@@ -1,5 +1,8 @@
 type ConfigFTP = {
-  path: string
-}
+  host: string;
+  password: string;
+  port: number;
+  username: string;
+};
 
-export default ConfigFTP
+export default ConfigFTP;
