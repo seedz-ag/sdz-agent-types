@@ -82,11 +82,11 @@ export default interface Repository {
     pagination?: PaginationInterface,
     type?: string
   ): Promise<DatabaseRow[]>;
-  getPaymentsType(
+  getPaymentsSpecie(
     pagination: PaginationInterface,
     type: string
   ): Promise<DatabaseRow[]>;
-  countPaymentsType(
+  countPaymentsSpecie(
     pagination?: PaginationInterface,
     type?: string
   ): Promise<DatabaseRow[]>;
@@ -143,6 +143,14 @@ export default interface Repository {
     type?: string
   ): Promise<DatabaseRow[]>;
   countTests(
+    pagination?: PaginationInterface,
+    type?: string
+  ): Promise<DatabaseRow[]>;
+  getPaymentsCondition(
+    pagination: PaginationInterface,
+    type?: string
+  ): Promise<DatabaseRow[]>;
+  countPaymentsCondition(
     pagination?: PaginationInterface,
     type?: string
   ): Promise<DatabaseRow[]>;
