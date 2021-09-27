@@ -20,6 +20,7 @@ type Config = {
   pageSize: number;
   scope: ConfigScope;
   ftp: ConfigFTP;
+  legacy: boolean;
 };
 
 export default Config;
