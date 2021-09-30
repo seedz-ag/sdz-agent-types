@@ -14,6 +14,7 @@ export type { default as ConfigScope } from "./config.scope.type";
 type Config = {
   async: boolean,
   auth: ConfigAuth;
+  connector: string;
   database: ConfigDatabase;
   debug: boolean;
   http: ConfigHttp;
