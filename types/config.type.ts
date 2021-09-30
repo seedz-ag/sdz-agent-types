@@ -12,15 +12,16 @@ export type { default as ConfigSchedule } from "./config.schedule.type";
 export type { default as ConfigScope } from "./config.scope.type";
 
 type Config = {
+  async: boolean,
   auth: ConfigAuth;
   database: ConfigDatabase;
   debug: boolean;
   http: ConfigHttp;
-  schedule: ConfigSchedule;
-  pageSize: number;
-  scope: ConfigScope;
   ftp: ConfigFTP;
   legacy: boolean;
+  pageSize: number;
+  schedule: ConfigSchedule;
+  scope: ConfigScope;
 };
 
 export default Config;
