@@ -9,6 +9,5 @@
   },
   "scripts": {
     "build": "tsc --declaration"
-  },
-  "type": "module"
+  }
 }

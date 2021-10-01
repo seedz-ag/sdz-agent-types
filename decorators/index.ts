@@ -1,7 +1,7 @@
 import ReadFileDecorator from "./read-file";
 
-export const ReadFile = ReadFileDecorator;
+export const ReadFile = ReadFileDecorator
 
 export default {
-  ReadFile,
+  ReadFile
 };
