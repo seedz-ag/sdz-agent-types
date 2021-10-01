@@ -1,7 +1,7 @@
-const ReadFileDecorator = require("./read-file");
+import ReadFileDecorator from "./read-file";
 
-exports.ReadFile = ReadFileDecorator;
+export const ReadFile = ReadFileDecorator;
 
-module.exports = {
-  ReadFile: ReadFileDecorator,
+export default {
+  ReadFile,
 };
