@@ -13,7 +13,9 @@ export const ReadFile = (
         const buffer = readFileSync(file);
         text = buffer.toString();
       } catch {}
-      return fn(text);
+      console.log(discriminator)
+      console.log(fn)
+      return fn.apply(discriminator, text);
     };
   }
   return discriminator;

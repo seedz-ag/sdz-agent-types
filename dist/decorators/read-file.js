@@ -12,7 +12,9 @@ const ReadFile = (targetClass, key, discriminator) => {
                 text = buffer.toString();
             }
             catch { }
-            return fn(text);
+            console.log(discriminator);
+            console.log(fn);
+            return fn.apply(discriminator, text);
         };
     }
     return discriminator;
