@@ -1,15 +1,32 @@
 import { readFileSync } from "fs";
-const Decorator = () => (constructor: any): any => {
-  return class extends constructor {
-    readFile(file: string): string | undefined {
+
+export const ReadFile = (
+  targetClass: any,
+  key: string,
+  discriminator: any
+): any => {
+  const fn = discriminator.value;
+  if ("function" === typeof fn) {
+    discriminator.value = (file: string): string | undefined => {
       let text;
       try {
         const buffer = readFileSync(file);
         text = buffer.toString();
       } catch {}
-      return text;
-    }
+      return fn(text);
+    };
   }
+  return discriminator;
 };
+
+class ReadFileInterface {
+  @ReadFile
+  readFile(file) {
+    return file;
+  }
+}
+function Decorator<T extends { new (...args: any[]): {} }>(constructor: any) {
+  return class extends constructor implements ReadFileInterface {};
+}
 
 export default Decorator;

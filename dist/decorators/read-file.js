@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = require("fs");
-const Decorator = (constructor) => {
+function Decorator(constructor) {
     return class extends constructor {
         readFile(file) {
             let text;
@@ -13,5 +13,6 @@ const Decorator = (constructor) => {
             return text;
         }
     };
-};
+}
+;
 exports.default = Decorator;
