@@ -1,6 +1,11 @@
 import { readFileSync } from "fs";
+import { Decorators } from "..";
 
-const ReadFile = (targetClass, targetKey, descriptor): any => {
+const Decorator = (
+  targetClass: any,
+  targetKey: string,
+  descriptor: any
+): any => {
   const fn = descriptor.value;
   if (typeof fn === "function") {
     descriptor.value = (file: string): string | undefined => {
@@ -15,4 +20,4 @@ const ReadFile = (targetClass, targetKey, descriptor): any => {
   return descriptor;
 };
 
-export default ReadFile;
+export default Decorator;
