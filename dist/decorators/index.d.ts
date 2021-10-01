@@ -1,5 +1,5 @@
-export declare const ReadFile: (targetClass: any, targetKey: string, descriptor: any) => any;
+export declare const ReadFile: () => any;
 declare const _default: {
-    ReadFile: (targetClass: any, targetKey: string, descriptor: any) => any;
+    ReadFile: () => any;
 };
 export default _default;

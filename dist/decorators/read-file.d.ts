@@ -1,2 +1,2 @@
-declare const Decorator: (targetClass: any, targetKey: string, descriptor: any) => any;
+declare const Decorator: () => any;
 export default Decorator;

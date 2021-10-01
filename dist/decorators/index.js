@@ -7,5 +7,5 @@ exports.ReadFile = void 0;
 const read_file_1 = __importDefault(require("./read-file"));
 exports.ReadFile = read_file_1.default;
 exports.default = {
-    ReadFile: exports.ReadFile,
+    ReadFile: exports.ReadFile
 };
