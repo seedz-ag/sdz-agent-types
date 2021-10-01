@@ -17,6 +17,6 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src"],
+  "include": ["src", "decorators"],
   "exclude": ["node_modules"]
 }
