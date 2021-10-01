@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+const { readFileSync } = require("fs");
 
 const ReadFile = (targetClass, targetKey, descriptor): any => {
   const fn = descriptor.value;
