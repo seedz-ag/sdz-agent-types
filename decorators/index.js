@@ -1,4 +1,4 @@
-const ReadFile = require('../dist/decorators/read-file');
+const ReadFile = import('../dist/decorators/read-file');
 
 exports.ReadFile = ReadFile;
 
