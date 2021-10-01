@@ -11,4 +11,4 @@ const ReadFile = (targetClass, targetKey, descriptor) => {
   return descriptor;
 };
 
-export default ReadFile;
+module.exports = ReadFile;
