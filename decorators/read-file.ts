@@ -5,7 +5,7 @@ const ReadFile = (targetClass, targetKey, descriptor) => {
   if (typeof fn === "function") {
     descriptor.value = (file) => {
       const buffer = readFileSync(file);
-      return JSON.parse(buffer.toString());
+      return buffer.toString();
     };
   }
   return descriptor;
