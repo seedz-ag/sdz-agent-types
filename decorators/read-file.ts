@@ -1,5 +1,5 @@
 import { readFileSync } from "fs";
-const Decorator = (constructor: any) => {
+const Decorator = (constructor: any): any => {
   return class extends constructor {
     readFile(file: string): string | undefined {
       let text;

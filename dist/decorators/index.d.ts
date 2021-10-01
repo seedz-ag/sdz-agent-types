@@ -1,17 +1,5 @@
-export declare const ReadFile: (constructor: any) => {
-    new (): {
-        [x: string]: any;
-        readFile(file: string): string | undefined;
-    };
-    [x: string]: any;
-};
+export declare const ReadFile: (constructor: any) => any;
 declare const _default: {
-    ReadFile: (constructor: any) => {
-        new (): {
-            [x: string]: any;
-            readFile(file: string): string | undefined;
-        };
-        [x: string]: any;
-    };
+    ReadFile: (constructor: any) => any;
 };
 export default _default;
