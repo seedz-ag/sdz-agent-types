@@ -25,8 +25,10 @@ class ReadFileInterface {
     return file;
   }
 }
-function Decorator<T extends { new (...args: any[]): {} }>(constructor: any) {
-  return class extends constructor implements ReadFileInterface {};
+function Decorator() {
+  return function<T extends { new (...args: any[]): {} }>(constructor: any) {
+    return class extends constructor implements ReadFileInterface {};
+  };
 }
 
 export default Decorator;

@@ -38,8 +38,10 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", String)
 ], ReadFileInterface.prototype, "readFile", null);
-function Decorator(constructor) {
-    return class extends constructor {
+function Decorator() {
+    return function (constructor) {
+        return class extends constructor {
+        };
     };
 }
 exports.default = Decorator;
