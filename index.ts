@@ -12,6 +12,7 @@ import ConnectorInterface from "./interfaces/connector.interface";
 import CsvOptionsInterface from "./interfaces/csv.interface";
 import DatabasePackage from "./interfaces/database-package.interface";
 import DatabaseRow from "./interfaces/database-row.interface";
+import Decorators from "./decorators";
 import Entity from "./interfaces/entity.interface";
 import FTPInterface from "./interfaces/ftp.interface";
 import HydratorMapping from "./interfaces/hydrator-mapping.interface";
@@ -36,6 +37,7 @@ export {
   CsvOptionsInterface,
   DatabasePackage,
   DatabaseRow,
+  Decorators,
   Entity,
   FTPInterface,
   HydratorMapping,
