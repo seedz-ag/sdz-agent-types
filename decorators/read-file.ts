@@ -19,16 +19,4 @@ export const ReadFile = (
   return discriminator;
 };
 
-class ReadFileInterface {
-  @ReadFile
-  readFile(file: string): string {
-    return file;
-  }
-}
-function Decorator() {
-  return function<T extends { new (...args: any[]): {} }>(constructor: any) {
-    return class extends constructor implements ReadFileInterface {};
-  };
-}
-
-export default Decorator;
+export default ReadFile;

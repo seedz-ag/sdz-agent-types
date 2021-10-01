@@ -1,6 +1,5 @@
-import ReadFileDecorator from "./read-file";
-export declare const ReadFile: typeof ReadFileDecorator;
+export declare const ReadFile: (targetClass: any, key: string, discriminator: any) => any;
 declare const _default: {
-    ReadFile: typeof ReadFileDecorator;
+    ReadFile: (targetClass: any, key: string, discriminator: any) => any;
 };
 export default _default;
