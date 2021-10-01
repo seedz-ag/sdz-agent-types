@@ -21,7 +21,7 @@ export const ReadFile = (
 
 class ReadFileInterface {
   @ReadFile
-  readFile(file) {
+  readFile(file: string): string {
     return file;
   }
 }
