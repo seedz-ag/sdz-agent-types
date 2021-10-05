@@ -1,6 +1,5 @@
 import fs from "fs";
 import Connector from "./connector.interface";
-
 class AbstractRepository {
   private connector: Connector;
   constructor(connector: Connector) {
