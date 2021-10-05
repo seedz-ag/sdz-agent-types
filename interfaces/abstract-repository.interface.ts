@@ -37,13 +37,13 @@ class AbstractRepository {
     });
   }
 
-  private count(entity: string): any {
+  count(entity: string): any {
     return this.execute(
       `SELECT count (*) as total from (${this.loadFile(entity)})`
     );
   }
 
-  private execute(query: string, skip?: number, limit?: number): any {
+  execute(query: string, skip?: number, limit?: number): any {
     const statement = [
       query,
       skip ? `SKIP ${skip}` : null,
@@ -61,7 +61,7 @@ class AbstractRepository {
       .toString();
   }
 
-  private query(entity: string, skip?: number, limit?: number): any {
+  query(entity: string, skip?: number, limit?: number): any {
     return this.execute(this.loadFile(entity), skip, limit);
   }
 
