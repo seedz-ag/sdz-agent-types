@@ -16,7 +16,7 @@ class AbstractRepository {
                 if (target[propKey]) {
                     return target[propKey];
                 }
-                console.log(target, propKey);
+                //console.log(target, propKey);
                 const entity = propKey.replace(/^(count|get|set)/, "");
                 if (propKey.match(/^count/)) {
                     return () => target.count(entity);
@@ -40,10 +40,10 @@ class AbstractRepository {
     count(entity) {
         return this.execute(`SELECT count (*) as total from (${this.loadFile(entity)})`);
     }
-    execute(query, skip, limit) {
+    execute(query, page, limit) {
         const statement = [
             query,
-            skip ? `SKIP ${skip}` : null,
+            page && limit ? `SKIP ${page * limit}` : null,
             limit ? `LIMIT ${limit}` : null,
         ]
             .filter((item) => !!item)
@@ -52,11 +52,11 @@ class AbstractRepository {
     }
     loadFile(file) {
         return fs_1.default
-            .readFileSync(`${process.cwd()}/config/sql/${file}.sql`)
+            .readFileSync(`${process.cwd()}/config/sql/${file.toLocaleLowerCase()}.sql`)
             .toString();
     }
-    query(entity, skip, limit) {
-        return this.execute(this.loadFile(entity), skip, limit);
+    query(entity, page, limit) {
+        return this.execute(this.loadFile(entity), page, limit);
     }
     setConnector(connector) {
         this.connector = connector;

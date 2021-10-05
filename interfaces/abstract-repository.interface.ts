@@ -13,7 +13,7 @@ class AbstractRepository {
         if (target[propKey]) {
           return target[propKey];
         }
-        console.log(target, propKey);
+        //console.log(target, propKey);
         const entity = propKey.replace(/^(count|get|set)/, "");
         if (propKey.match(/^count/)) {
           return () => target.count(entity);
@@ -42,10 +42,10 @@ class AbstractRepository {
     );
   }
 
-  execute(query: string, skip?: number, limit?: number): any {
+  execute(query: string, page?: number, limit?: number): any {
     const statement = [
       query,
-      skip ? `SKIP ${skip}` : null,
+      page && limit ? `SKIP ${page * limit}` : null,
       limit ? `LIMIT ${limit}` : null,
     ]
       .filter((item) => !!item)
@@ -56,12 +56,14 @@ class AbstractRepository {
 
   loadFile(file: string): string {
     return fs
-      .readFileSync(`${process.cwd()}/config/sql/${file}.sql`)
+      .readFileSync(
+        `${process.cwd()}/config/sql/${file.toLocaleLowerCase()}.sql`
+      )
       .toString();
   }
 
-  query(entity: string, skip?: number, limit?: number): any {
-    return this.execute(this.loadFile(entity), skip, limit);
+  query(entity: string, page?: number, limit?: number): any {
+    return this.execute(this.loadFile(entity), page, limit);
   }
 
   setConnector(connector: Connector): this {
