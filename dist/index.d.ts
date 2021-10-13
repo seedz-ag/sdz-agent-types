@@ -19,4 +19,5 @@ import Invoice from "./interfaces/invoice.interface";
 import PaginationInterface from "./interfaces/pagination.interface";
 import QuestionResponse from "./interfaces/question-response.interface";
 import AbstractRepository from "./interfaces/abstract-repository.interface";
-export { APIEntity, Client, Config, ConfigAuth, ConfigAuthAPI, ConfigAuthFTP, ConfigDatabaseInterface, ConfigHTTP, Connector, ConnectorInterface, CsvOptionsInterface, DatabasePackage, DatabaseRow, Decorators, Entity, FTPInterface, HydratorMapping, Invoice, PaginationInterface, QuestionResponse, AbstractRepository, };
+import { ERPs } from "./enums/erps.enum";
+export { APIEntity, Client, Config, ConfigAuth, ConfigAuthAPI, ConfigAuthFTP, ConfigDatabaseInterface, ConfigHTTP, Connector, ConnectorInterface, CsvOptionsInterface, DatabasePackage, DatabaseRow, Decorators, Entity, FTPInterface, HydratorMapping, Invoice, PaginationInterface, QuestionResponse, AbstractRepository, ERPs, };
