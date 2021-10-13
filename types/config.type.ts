@@ -4,6 +4,7 @@ import ConfigDatabase from "../interfaces/config.database.interface";
 import ConfigSchedule from "./config.schedule.type";
 import ConfigScope from "./config.scope.type";
 import ConfigFTP from "./config.ftp.type";
+import { ERPs } from "../enums/erps.enum";
 
 export type { default as ConfigAuth } from "./config.auth.type";
 export type { default as ConfigFTP } from "./config.ftp.type";
@@ -17,6 +18,7 @@ type Config = {
   connector: string;
   database: ConfigDatabase;
   debug: boolean;
+  erp: ERPs,
   http: ConfigHttp;
   ftp: ConfigFTP;
   legacy: boolean;
