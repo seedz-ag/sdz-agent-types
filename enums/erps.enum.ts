@@ -1,4 +1,5 @@
-export enum ERPs {
+ enum ERPs {
   Linx,
   Protheus,
 }
+ export default ERPs
