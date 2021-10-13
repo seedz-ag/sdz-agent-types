@@ -5,7 +5,6 @@ import ConfigAuth from "./types/config.auth.type";
 import ConfigAuthAPI from "./types/config.auth.api.type";
 import ConfigAuthFTP from "./types/config.auth.ftp.type";
 import ConfigDatabaseInterface from "./interfaces/config.database.interface";
-import ConfigFTP from "./types/config.ftp.type";
 import ConfigHTTP from "./types/config.http.type";
 import Connector from "./interfaces/connector.interface";
 import ConnectorInterface from "./interfaces/connector.interface";
@@ -19,8 +18,7 @@ import HydratorMapping from "./interfaces/hydrator-mapping.interface";
 import Invoice from "./interfaces/invoice.interface";
 import PaginationInterface from "./interfaces/pagination.interface";
 import QuestionResponse from "./interfaces/question-response.interface";
-import Repository from "./interfaces/repository.interface";
-import RepositoryInterface from "./interfaces/repository.interface";
+import AbstractRepository from "./interfaces/abstract-repository.interface";
 
 export {
   APIEntity,
@@ -30,7 +28,6 @@ export {
   ConfigAuthAPI,
   ConfigAuthFTP,
   ConfigDatabaseInterface,
-  ConfigFTP,
   ConfigHTTP,
   Connector,
   ConnectorInterface,
@@ -44,6 +41,5 @@ export {
   Invoice,
   PaginationInterface,
   QuestionResponse,
-  Repository,
-  RepositoryInterface,
+  AbstractRepository,
 };

@@ -1,7 +1,7 @@
-import Connector from './connector.interface'
-import Repository from './repository.interface'
+import Connector from "./connector.interface";
+import AbstractRepository from "./abstract-repository.interface";
 
 export default interface DatabasePackage {
-  Connector: Connector
-  Repository: Repository
+  Connector: Connector;
+  Repository: AbstractRepository;
 }

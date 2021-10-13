@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2021",
     "module": "commonjs",
     "allowJs": true,
     "outDir": "./dist",
@@ -8,7 +8,7 @@
     "strict": true,
     "strictPropertyInitialization": false,
     "moduleResolution": "node",
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,
@@ -17,6 +17,5 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src", "decorators"],
-  "exclude": ["node_modules"]
+
 }

@@ -1,0 +1,25 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EntityNames = void 0;
+var EntityNames;
+(function (EntityNames) {
+    EntityNames["CLIENTE"] = "cliente";
+    EntityNames["ENDERECO"] = "endereco";
+    EntityNames["PROPRIEDADE"] = "propriedade";
+    EntityNames["ITEM"] = "item";
+    EntityNames["ITEM_BRANDING"] = "item_branding";
+    EntityNames["ITEM_GRUPO"] = "item_grupo";
+    EntityNames["PEDIDO"] = "pedido";
+    EntityNames["PEDIDO_ITEM"] = "pedido_item";
+    EntityNames["FATURAMENTO"] = "faturamento";
+    EntityNames["FATURAMENTO_ITEM"] = "faturamento_item";
+    EntityNames["PONTOS_PEDIDO"] = "pontos_pedido";
+    EntityNames["FUNCIONARIO"] = "funcionario";
+    EntityNames["CONDICAO_PAGAMENTO"] = "condicao_pagamento";
+    EntityNames["ESPECIE_PAGAMENTO"] = "especie_pagamento";
+    EntityNames["FORNECEDOR"] = "fornecedor";
+    EntityNames["CONTAS_PAGAR"] = "contas_pagar";
+    EntityNames["CONTAS_RECEBER"] = "contas_receber";
+    EntityNames["VENDEDOR"] = "vendedor";
+    EntityNames["ESTOQUE"] = "estoque";
+})(EntityNames = exports.EntityNames || (exports.EntityNames = {}));
