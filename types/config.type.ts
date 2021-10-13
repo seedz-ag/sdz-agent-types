@@ -7,6 +7,7 @@ import ConfigAuthFTP from "./config.auth.ftp.type";
 
 export type { default as ConfigAuthAPI } from "./config.auth.api.type";
 export type { default as ConfigAuthFTP } from "./config.auth.ftp.type";
+export type { default as ConfigDatabase } from "../interfaces/config.database.interface";
 export type { default as ConfigSchedule } from "./config.schedule.type";
 export type { default as ConfigScope } from "./config.scope.type";
 
@@ -23,5 +24,8 @@ type Config = {
   schedule: ConfigSchedule;
   scope: ConfigScope;
 };
+
+
+
 
 export default Config;
