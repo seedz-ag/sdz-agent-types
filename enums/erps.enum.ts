@@ -1,5 +1,4 @@
- enum ERPs {
+ export const enum ERPs {
   Linx,
   Protheus,
 }
- export default ERPs
