@@ -3,7 +3,7 @@ import ConfigDatabase from "../interfaces/config.database.interface";
 import ConfigSchedule from "./config.schedule.type";
 import ConfigScope from "./config.scope.type";
 import ConfigAuthFTP from "./config.auth.ftp.type";
-import { ERPs }  from "../enums/erps.enum";
+import ERPs  from "../enums/erps.enum";
 
 export type { default as ConfigAuthAPI } from "./config.auth.api.type";
 export type { default as ConfigAuthFTP } from "./config.auth.ftp.type";

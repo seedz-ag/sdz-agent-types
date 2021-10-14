@@ -19,7 +19,7 @@ import Invoice from "./interfaces/invoice.interface";
 import PaginationInterface from "./interfaces/pagination.interface";
 import QuestionResponse from "./interfaces/question-response.interface";
 import AbstractRepository from "./interfaces/abstract-repository.interface";
-import { ERPs }  from "./enums/erps.enum";
+import ERPs from "./enums/erps.enum";
 
 export {
   AbstractRepository,

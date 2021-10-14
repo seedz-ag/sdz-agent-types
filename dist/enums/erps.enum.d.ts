@@ -1,4 +1,5 @@
-export declare const enum ERPs {
-    Linx = 0,
-    Protheus = 1
+declare enum ERPs {
+    Linx = "linx",
+    Protheus = "protheus"
 }
+export default ERPs;
