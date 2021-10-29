@@ -50,6 +50,9 @@ class AbstractRepository {
             .join(" ");
         return this.connector.execute(statement);
     }
+    getConnector() {
+        return this.connector;
+    }
     loadFile(file) {
         return fs_1.default
             .readFileSync(`${process.cwd()}/config/sql/${file.toLocaleLowerCase()}.sql`)

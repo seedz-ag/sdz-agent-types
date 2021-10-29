@@ -54,6 +54,10 @@ class AbstractRepository {
     return this.connector.execute(statement);
   }
 
+  getConnector():Connector {
+    return this.connector;
+  }
+  
   loadFile(file: string): string {
     return fs
       .readFileSync(
