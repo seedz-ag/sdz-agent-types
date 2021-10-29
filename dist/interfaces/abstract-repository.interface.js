@@ -37,10 +37,13 @@ class AbstractRepository {
             },
         });
     }
-    count(entity) {
-        return this.execute(`SELECT count (*) as total from (${this.loadFile(entity)})`);
+    async count(entity) {
+        const resultSet = await this.execute(`SELECT COUNT (*) as total FROM (${this.loadFile(entity)}`);
+        const obj = {};
+        Object.keys(resultSet).map((key) => obj[key.toLowerCase()] = resultSet[key]);
+        return obj.total;
     }
-    execute(query, page, limit) {
+    async execute(query, page, limit) {
         const statement = [
             query,
             page && limit ? `SKIP ${page * limit}` : null,

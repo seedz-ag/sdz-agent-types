@@ -36,13 +36,14 @@ class AbstractRepository {
     });
   }
 
-  count(entity: string): any {
-    return this.execute(
-      `SELECT count (*) as total from (${this.loadFile(entity)})`
-    );
+  async count(entity: string): Promise<number> {
+    const resultSet = await this.execute(`SELECT COUNT (*) as total FROM (${this.loadFile(entity)}`);
+    const obj:any = {}
+    Object.keys(resultSet).map((key) =>  obj[key.toLowerCase()] = resultSet[key])
+    return obj.total;
   }
 
-  execute(query: string, page?: number, limit?: number): any {
+  async execute(query: string, page?: number, limit?: number): Promise<any> {
     const statement = [
       query,
       page && limit ? `SKIP ${page * limit}` : null,
@@ -52,7 +53,10 @@ class AbstractRepository {
       .join(" ");
 
     return this.connector.execute(statement);
+    
   }
+
+
 
   getConnector():Connector {
     return this.connector;
