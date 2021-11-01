@@ -37,7 +37,7 @@ class AbstractRepository {
   }
 
   async count(entity: string): Promise<number> {
-    const resultSet = await this.execute(`SELECT COUNT (*) as total FROM (${this.loadFile(entity)}`);
+    const resultSet = await this.execute(`SELECT COUNT (*) as total FROM (${this.loadFile(entity)})`);
     const obj:any = {}
     Object.keys(resultSet).map((key) =>  obj[key.toLowerCase()] = resultSet[key])
     return obj.total;
