@@ -1,5 +1,7 @@
 declare enum DatabaseDrivers {
     informix = "informix",
-    oracle = "oracle"
+    oracle = "oracle",
+    mysql = "mysql",
+    mssql = "mssql"
 }
 export default DatabaseDrivers;

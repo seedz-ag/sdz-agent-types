@@ -4,5 +4,7 @@ var DatabaseDrivers;
 (function (DatabaseDrivers) {
     DatabaseDrivers["informix"] = "informix";
     DatabaseDrivers["oracle"] = "oracle";
+    DatabaseDrivers["mysql"] = "mysql";
+    DatabaseDrivers["mssql"] = "mssql";
 })(DatabaseDrivers || (DatabaseDrivers = {}));
 exports.default = DatabaseDrivers;
