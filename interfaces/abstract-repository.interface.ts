@@ -56,14 +56,12 @@ class AbstractRepository {
     
   }
 
-
-
   getConnector():Connector {
     return this.connector;
   }
   
   loadFile(file: string): string {
-    const dir  = process.env.CONFIG_DIR || `${process.cwd()}/config`;
+    const dir  = process.env.CONFIGDIR || `${process.cwd()}/config`;
     return fs
       .readFileSync(
         `${dir}/sql/${file.toLocaleLowerCase()}.sql`
