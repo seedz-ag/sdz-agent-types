@@ -63,9 +63,10 @@ class AbstractRepository {
   }
   
   loadFile(file: string): string {
+    const dir  = process.env.CONFIG_DIR || `${process.cwd()}/config`;
     return fs
       .readFileSync(
-        `${process.cwd()}/config/sql/${file.toLocaleLowerCase()}.sql`
+        `${dir}/sql/${file.toLocaleLowerCase()}.sql`
       )
       .toString();
   }

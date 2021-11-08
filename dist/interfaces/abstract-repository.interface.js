@@ -57,8 +57,9 @@ class AbstractRepository {
         return this.connector;
     }
     loadFile(file) {
+        const dir = process.env.CONFIG_DIR || `${process.cwd()}/config`;
         return fs_1.default
-            .readFileSync(`${process.cwd()}/config/sql/${file.toLocaleLowerCase()}.sql`)
+            .readFileSync(`${dir}/sql/${file.toLocaleLowerCase()}.sql`)
             .toString();
     }
     query(entity, page, limit) {
