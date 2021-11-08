@@ -13,7 +13,6 @@ class AbstractRepository {
         if (target[propKey]) {
           return target[propKey];
         }
-        //console.log(target, propKey);
         const entity = propKey.replace(/^(count|get|set)/, "");
         if (propKey.match(/^count/)) {
           return () => target.count(entity);
