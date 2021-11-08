@@ -1,5 +1,6 @@
 export default interface CsvOptions {
-  skipRows: number,
-  maxRows: number,
-  delimiter: string
+  skipRows: number;
+  maxRows: number;
+  delimiter: string;
+  headers?: boolean;
 }
