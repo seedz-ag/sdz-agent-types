@@ -1,18 +1,20 @@
-export const APM = (targetClass: any, key: string, discriminator: any): any => {
-  targetClass.apm = (transaction: string) => {
-    if (!targetClass.appd) {
-      return;
-    }
+export const APM = (name: any): ClassDecorator => {
+  return (target: any) => {
+    target.apm = (transaction: string) => {
+      if (!target.appd) {
+        return;
+      }
 
-    if (targetClass.transactions[transaction]) {
-      targetClass.transactions[transaction].end();
-      return;
-    }
+      if (target.transactions[transaction]) {
+        target.transactions[transaction].end();
+        return;
+      }
 
-    targetClass.transactions[transaction] = targetClass.appd.startTransaction(
-      `[${targetClass} > ${transaction}]`
-    );
-  };
+      target.transactions[transaction] = target.appd.startTransaction(
+        `[${name} > ${transaction}]`
+      );
+    };
+  }
 };
 
 export default APM;
