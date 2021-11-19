@@ -1,2 +1,2 @@
-export declare const APM: (targetClass: any, key: string, discriminator: any) => any;
+export declare const APM: (appd: any, prefix: any) => (targetClass: any, key: any, discriminator: any) => any;
 export default APM;
