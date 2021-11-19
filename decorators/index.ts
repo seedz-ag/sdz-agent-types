@@ -1,7 +1,10 @@
+import APMDecorator from "./apm";
 import ReadFileDecorator from "./read-file";
 
-export const ReadFile = ReadFileDecorator
+export const APM = APMDecorator;
+export const ReadFile = ReadFileDecorator;
 
 export default {
-  ReadFile
+  APM,
+  ReadFile,
 };
