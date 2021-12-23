@@ -18,6 +18,7 @@ type Config = {
   database: ConfigDatabase;
   debug: boolean;
   erp: ERPs,
+  fileSize: number;
   ftp: ConfigAuthFTP;
   legacy: boolean;
   pageSize: number;
