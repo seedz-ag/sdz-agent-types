@@ -9,6 +9,7 @@ import ConfigDatabaseInterface from "./interfaces/config.database.interface";
 import ConfigHTTP from "./types/config.http.type";
 import Connector from "./interfaces/connector.interface";
 import ConnectorInterface from "./interfaces/connector.interface";
+import Credentials from "types/credentials.type";
 import CsvOptionsInterface from "./interfaces/csv.interface";
 import DatabasePackage from "./interfaces/database-package.interface";
 import DatabaseRow from "./interfaces/database-row.interface";
@@ -33,6 +34,7 @@ export {
   ConfigHTTP,
   Connector,
   ConnectorInterface,
+  Credentials,
   CsvOptionsInterface,
   DatabasePackage,
   DatabaseRow,
