@@ -45,16 +45,16 @@ class AbstractRepository {
   }
 
   buildQuery(query: string) {
-    const argv: {[key:string]:any} = yargs(process.argv).argv;
+    const argv: {[key: string]: any} = yargs(process.argv).argv;
     const replaces = [];
 
     let newQuery = query;
 
-    if (argv.sqlDays) {
-      const start = `${moment().subtract(argv.sqlDays, 'days').format('YYYY-MM-DD')} 00:00:00`;
-      for (const replace of this.getPlaceholder(query, /(AND \(.*?{START_DATE}\))/g)) {
-        replaces.push([replace, replace.replace('{START_DATE}', `'${start}'`)]);
-      }
+    for (const replace of this.getPlaceholder(query, /(AND \(.*?{START_DATE}\))/g)) {
+      replaces.push([
+        replace,
+        argv.sqlDays ? replace.replace('{START_DATE}', `'${`${moment().subtract(argv.sqlDays, 'days').format('YYYY-MM-DD')} 00:00:00`}'`) : ''
+      ]);
     }
 
     for (const option of replaces) {
