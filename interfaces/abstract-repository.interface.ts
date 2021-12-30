@@ -39,22 +39,22 @@ class AbstractRepository {
     });
   }
 
-  private getPlaceholder(query:string, preg: RegExp): string {
+  private getPlaceholder(query:string, preg: RegExp): string[] | string {
     const exec = query.match(preg);
-    return exec && exec[0] || '';
+    return exec || '';
   }
 
   buildQuery(query: string) {
-    const argv: {[key:string]: any} = yargs(process.argv).argv;
-    const replaces = [
-      [this.getPlaceholder(query, /(AND \(.*?{START_DATE}\))/), '']
-    ];
+    const argv: {[key:string]:any} = yargs(process.argv).argv;
+    const replaces = [];
 
     let newQuery = query;
 
     if (argv.sqlDays) {
       const start = `${moment().subtract(argv.sqlDays, 'days').format('YYYY-MM-DD')} 00:00:00`;
-      replaces[0][1] = replaces[0][0].replace('{START_DATE}', `'${start}'`);
+      for (const replace of this.getPlaceholder(query, /(AND \(.*?{START_DATE}\))/g)) {
+        replaces.push([replace, replace.replace('{START_DATE}', `'${start}'`)]);
+      }
     }
 
     for (const option of replaces) {
