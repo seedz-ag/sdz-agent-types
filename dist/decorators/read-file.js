@@ -8,7 +8,7 @@ const ReadFile = (targetClass, key, discriminator) => {
         discriminator.value = (file) => {
             let text;
             try {
-                const buffer = fs_1.readFileSync(file);
+                const buffer = (0, fs_1.readFileSync)(file);
                 text = buffer.toString();
             }
             catch { }
