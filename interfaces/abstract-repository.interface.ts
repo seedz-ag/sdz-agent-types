@@ -1,5 +1,9 @@
 import fs from "fs";
+import moment from "moment";
+import yargs from "yargs";
+
 import Connector from "./connector.interface";
+
 class AbstractRepository {
   private connector: Connector;
   constructor(connector: Connector) {
@@ -35,6 +39,31 @@ class AbstractRepository {
     });
   }
 
+  private getPlaceholder(query:string, preg: RegExp): string {
+    const exec = query.match(preg);
+    return exec && exec[0] || '';
+  }
+
+  buildQuery(query: string) {
+    const argv: {[key:string]: any} = yargs(process.argv).argv;
+    const replaces = [
+      [this.getPlaceholder(query, /(AND \(.*?{START_DATE}\))/), '']
+    ];
+
+    let newQuery = query;
+
+    if (argv.sqlDays) {
+      const start = `${moment().subtract(argv.sqlDays, 'days').format('YYYY-MM-DD')} 00:00:00`;
+      replaces[0][1] = replaces[0][0].replace('{START_DATE}', `'${start}'`);
+    }
+
+    for (const option of replaces) {
+      newQuery = newQuery.replace(option[0], option[1]);
+    }
+
+    return newQuery;
+  }
+
   async count(entity: string): Promise<number> {
     const resultSet = await this.execute(`SELECT COUNT (*) as total FROM (${this.loadFile(entity)})`);
     const obj:any = {}
@@ -44,7 +73,7 @@ class AbstractRepository {
 
   async execute(query: string, page?: number, limit?: number): Promise<any> {
     const statement = [
-      query,
+      this.buildQuery(query),
       page && limit ? `SKIP ${page * limit}` : null,
       limit ? `LIMIT ${limit}` : null,
     ]
