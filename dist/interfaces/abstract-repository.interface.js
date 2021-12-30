@@ -40,17 +40,17 @@ class AbstractRepository {
     }
     getPlaceholder(query, preg) {
         const exec = query.match(preg);
-        return exec && exec[0] || '';
+        return exec || '';
     }
     buildQuery(query) {
         const argv = (0, yargs_1.default)(process.argv).argv;
-        const replaces = [
-            [this.getPlaceholder(query, /(AND \(.*?{START_DATE}\))/), '']
-        ];
+        const replaces = [];
         let newQuery = query;
         if (argv.sqlDays) {
             const start = `${(0, moment_1.default)().subtract(argv.sqlDays, 'days').format('YYYY-MM-DD')} 00:00:00`;
-            replaces[0][1] = replaces[0][0].replace('{START_DATE}', `'${start}'`);
+            for (const replace of this.getPlaceholder(query, /(AND \(.*?{START_DATE}\))/g)) {
+                replaces.push([replace, replace.replace('{START_DATE}', `'${start}'`)]);
+            }
         }
         for (const option of replaces) {
             newQuery = newQuery.replace(option[0], option[1]);
