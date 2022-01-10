@@ -1,6 +1,6 @@
 declare type ConfigAuthAPI = {
     password: string;
-    url: string;
+    url?: string;
     username: string;
 };
 export default ConfigAuthAPI;
