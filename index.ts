@@ -19,6 +19,7 @@ import ERPs from "./enums/erps.enum";
 import FTPInterface from "./interfaces/ftp.interface";
 import HydratorMapping from "./interfaces/hydrator-mapping.interface";
 import Invoice from "./interfaces/invoice.interface";
+import OpenIdHeaders from "types/open-id-headers.type";
 import PaginationInterface from "./interfaces/pagination.interface";
 import QuestionResponse from "./interfaces/question-response.interface";
 
@@ -44,6 +45,7 @@ export {
   FTPInterface,
   HydratorMapping,
   Invoice,
+  OpenIdHeaders,
   PaginationInterface,
   QuestionResponse,
 };
