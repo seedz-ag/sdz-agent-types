@@ -1,5 +1,7 @@
 type ConfigAuthAPI = {
-  token: string
-}
+  password: string;
+  url?: string;
+  username: string;
+};
 
-export default ConfigAuthAPI
+export default ConfigAuthAPI;

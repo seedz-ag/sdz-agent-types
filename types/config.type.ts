@@ -1,26 +1,35 @@
-import ConfigAuth from "./config.auth.type";
-import ConfigHttp from "./config.http.type";
+import ConfigAuthAPI from "./config.auth.api.type";
 import ConfigDatabase from "../interfaces/config.database.interface";
 import ConfigSchedule from "./config.schedule.type";
 import ConfigScope from "./config.scope.type";
-import ConfigFTP from "./config.ftp.type";
+import ConfigAuthFTP from "./config.auth.ftp.type";
+import Credentials from "./credentials.type";
+import ERPs  from "../enums/erps.enum";
 
-export type { default as ConfigAuth } from "./config.auth.type";
-export type { default as ConfigFTP } from "./config.ftp.type";
+export type { default as ConfigAuthAPI } from "./config.auth.api.type";
+export type { default as ConfigAuthFTP } from "./config.auth.ftp.type";
 export type { default as ConfigDatabase } from "../interfaces/config.database.interface";
 export type { default as ConfigSchedule } from "./config.schedule.type";
 export type { default as ConfigScope } from "./config.scope.type";
+export type { default as Credentials } from "./credentials.type";
 
 type Config = {
-  auth: ConfigAuth;
+  api: ConfigAuthAPI;
+  async: boolean;
+  connector: string;
+  credentials: Credentials;
   database: ConfigDatabase;
   debug: boolean;
-  http: ConfigHttp;
-  schedule: ConfigSchedule;
-  pageSize: number;
-  scope: ConfigScope;
-  ftp: ConfigFTP;
+  erp: ERPs,
+  fileSize: number;
+  ftp: ConfigAuthFTP;
   legacy: boolean;
+  pageSize: number;
+  schedule: ConfigSchedule;
+  scope: ConfigScope;
 };
+
+
+
 
 export default Config;

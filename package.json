@@ -1,8 +1,17 @@
 {
   "name": "sdz-agent-types",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "./dist/index.js",
   "license": "Apache",
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@types/yargs": "^17.0.8",
+    "moment": "^2.29.1",
+    "yargs": "^17.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.2"
+  },
+  "scripts": {
+    "build": "tsc --declaration"
+  }
 }
