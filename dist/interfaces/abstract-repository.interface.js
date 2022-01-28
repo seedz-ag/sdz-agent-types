@@ -4,6 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
+const moment_1 = __importDefault(require("moment"));
+const yargs_1 = __importDefault(require("yargs"));
 class AbstractRepository {
     constructor(connector) {
         if (new.target === AbstractRepository) {
@@ -36,15 +38,34 @@ class AbstractRepository {
             },
         });
     }
+    getPlaceholder(query, preg) {
+        const exec = query.match(preg);
+        return exec || '';
+    }
+    buildQuery(query) {
+        const argv = (0, yargs_1.default)(process.argv).argv;
+        const replaces = [];
+        let newQuery = query;
+        for (const replace of this.getPlaceholder(query, /(AND \(.*?{START_DATE}\))/g)) {
+            replaces.push([
+                replace,
+                argv.sqlDays ? replace.replace('{START_DATE}', `'${`${(0, moment_1.default)().subtract(argv.sqlDays, 'days').format('YYYY-MM-DD')} 00:00:00`}'`) : ''
+            ]);
+        }
+        for (const option of replaces) {
+            newQuery = newQuery.replace(option[0], option[1]);
+        }
+        return newQuery;
+    }
     async count(entity) {
-        const resultSet = await this.execute(`SELECT COUNT (*) as total FROM (${this.loadFile(entity)})`);
+        const resultSet = await this.execute(`SELECT COUNT (*) as total FROM (${this.buildQuery(this.loadFile(entity))})`);
         const obj = {};
         Object.keys(resultSet).map((key) => obj[key.toLowerCase()] = resultSet[key]);
         return obj[0].total;
     }
     async execute(query, page, limit) {
         const statement = [
-            query,
+            this.buildQuery(query),
             page && limit ? `SKIP ${page * limit}` : null,
             limit ? `LIMIT ${limit}` : null,
         ]
