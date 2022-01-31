@@ -6,5 +6,6 @@ var DatabaseDrivers;
     DatabaseDrivers["oracle"] = "oracle";
     DatabaseDrivers["mysql"] = "mysql";
     DatabaseDrivers["mssql"] = "mssql";
+    DatabaseDrivers["firebird"] = "firebird";
 })(DatabaseDrivers || (DatabaseDrivers = {}));
 exports.default = DatabaseDrivers;
