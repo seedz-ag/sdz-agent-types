@@ -1,8 +1,7 @@
 type ConfigAuthOpenId = {
-  host: string;
-  clientId: string;
-  clientSecret: string;
-  port: number;
+  CLIENT_ID: string;
+  CLIENT_SECRET: string;
+  ISSUER_URL: string;
 };
 
 export default ConfigAuthOpenId;
