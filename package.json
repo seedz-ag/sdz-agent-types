@@ -1,6 +1,6 @@
 {
   "name": "sdz-agent-types",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "main": "./dist/index.js",
   "license": "Apache",
   "dependencies": {
@@ -11,6 +11,9 @@
   "devDependencies": {
     "@types/node": "^16.10.2"
   },
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "build": "tsc --declaration"
   }
