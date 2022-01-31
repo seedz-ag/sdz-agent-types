@@ -1,6 +1,6 @@
 declare enum ERPs {
+    Agrotitan = "agrotitan",
     Linx = "linx",
-    Protheus = "protheus",
-    Agrotitan = "agrotitan"
+    Protheus = "protheus"
 }
 export default ERPs;

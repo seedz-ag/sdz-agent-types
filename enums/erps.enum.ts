@@ -1,6 +1,6 @@
  enum ERPs {
+  Agrotitan= 'agrotitan',
   Linx = 'linx',
   Protheus= 'protheus',
-  Agrotitan= 'agrotitan',
 }
  export default ERPs
