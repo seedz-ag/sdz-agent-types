@@ -1,8 +1,8 @@
 declare enum DatabaseDrivers {
     firebird = "firebird",
     informix = "informix",
-    oracle = "oracle",
+    mssql = "mssql",
     mysql = "mysql",
-    mssql = "mssql"
+    oracle = "oracle"
 }
 export default DatabaseDrivers;

@@ -4,8 +4,8 @@ var DatabaseDrivers;
 (function (DatabaseDrivers) {
     DatabaseDrivers["firebird"] = "firebird";
     DatabaseDrivers["informix"] = "informix";
-    DatabaseDrivers["oracle"] = "oracle";
-    DatabaseDrivers["mysql"] = "mysql";
     DatabaseDrivers["mssql"] = "mssql";
+    DatabaseDrivers["mysql"] = "mysql";
+    DatabaseDrivers["oracle"] = "oracle";
 })(DatabaseDrivers || (DatabaseDrivers = {}));
 exports.default = DatabaseDrivers;
