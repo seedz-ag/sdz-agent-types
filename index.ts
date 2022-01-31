@@ -5,6 +5,7 @@ import Config from "./types/config.type";
 import ConfigAuth from "./types/config.auth.type";
 import ConfigAuthAPI from "./types/config.auth.api.type";
 import ConfigAuthFTP from "./types/config.auth.ftp.type";
+import ConfigAuthOpenId from "./types/config.auth.open-id.type";
 import ConfigDatabaseInterface from "./interfaces/config.database.interface";
 import ConfigHTTP from "./types/config.http.type";
 import Connector from "./interfaces/connector.interface";
@@ -31,6 +32,7 @@ export {
   ConfigAuth,
   ConfigAuthAPI,
   ConfigAuthFTP,
+  ConfigAuthOpenId,
   ConfigDatabaseInterface,
   ConfigHTTP,
   Connector,
