@@ -22,6 +22,7 @@ declare type Config = {
     fileSize: number;
     ftp: ConfigAuthFTP;
     legacy: boolean;
+    mongoUrl?: string;
     pageSize: number;
     schedule: ConfigSchedule;
     scope: ConfigScope;
