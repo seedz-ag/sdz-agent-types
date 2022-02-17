@@ -23,6 +23,7 @@ type Config = {
   erp: ERPs,
   fileSize: number;
   ftp: ConfigAuthFTP;
+  issuerUrl?: string;
   legacy: boolean;
   mongoUrl?: string;
   pageSize: number;
