@@ -1,8 +1,8 @@
 import ConfigAuthAPI from "./config.auth.api.type";
+import ConfigAuthFTP from "./config.auth.ftp.type";
 import ConfigDatabase from "../interfaces/config.database.interface";
 import ConfigSchedule from "./config.schedule.type";
 import ConfigScope from "./config.scope.type";
-import ConfigAuthFTP from "./config.auth.ftp.type";
 import Credentials from "./credentials.type";
 import ERPs  from "../enums/erps.enum";
 
@@ -26,6 +26,7 @@ type Config = {
   issuerUrl?: string;
   legacy: boolean;
   mongoUrl?: string;
+  name?: string;
   pageSize: number;
   schedule: ConfigSchedule;
   scope: ConfigScope;
