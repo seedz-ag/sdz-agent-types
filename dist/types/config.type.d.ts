@@ -13,6 +13,7 @@ export type { default as ConfigScope } from "./config.scope.type";
 export type { default as HydratorMapping } from "../interfaces/hydrator-mapping.interface";
 export type { default as Sql } from "../interfaces/sql.interface";
 declare type Config = {
+    apiUrl: string;
     connector: string;
     database: ConfigDatabase;
     debug: boolean;
