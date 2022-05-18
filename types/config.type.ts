@@ -18,6 +18,7 @@ export type { default as HydratorMapping } from "../interfaces/hydrator-mapping.
 export type { default as Sql } from  "../interfaces/sql.interface";
 
 type Config = {
+  apiUrl: string;
   connector: string;
   database: ConfigDatabase;
   debug: boolean;
