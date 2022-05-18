@@ -23,6 +23,7 @@ declare type Config = {
     http?: any;
     legacy: boolean;
     mongoUrl?: string;
+    issuerUrl?: string;
     name?: string;
     pageSize: number;
     schedule: ConfigSchedule;
