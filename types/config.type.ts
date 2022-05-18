@@ -27,6 +27,7 @@ type Config = {
   ftp: ConfigAuthFTP;
   http?: any;
   legacy: boolean;
+  mongoUrl?: string;
   name?: string;
   pageSize: number;
   schedule: ConfigSchedule;
