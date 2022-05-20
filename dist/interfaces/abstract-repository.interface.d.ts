@@ -4,11 +4,11 @@ declare class AbstractRepository {
     constructor(connector: Connector);
     private getPlaceholder;
     buildQuery(query: string): string;
-    count(entity: string): Promise<number>;
+    count(query: string): Promise<number>;
     execute(query: string, page?: number, limit?: number): Promise<any>;
     getConnector(): Connector;
     loadFile(file: string): string;
-    query(entity: string, page?: number, limit?: number): any;
+    query(query: string, page?: number, limit?: number): any;
     setConnector(connector: Connector): this;
 }
 export default AbstractRepository;

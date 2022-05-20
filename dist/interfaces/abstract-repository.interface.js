@@ -57,8 +57,8 @@ class AbstractRepository {
         }
         return newQuery;
     }
-    async count(entity) {
-        const resultSet = await this.execute(`SELECT COUNT (*) as total FROM (${this.buildQuery(this.loadFile(entity))})`);
+    async count(query) {
+        const resultSet = await this.execute(`SELECT COUNT (*) as total FROM (${this.buildQuery(query)})`);
         const obj = {};
         Object.keys(resultSet).map((key) => obj[key.toLowerCase()] = resultSet[key]);
         return obj[0].total;
@@ -82,8 +82,8 @@ class AbstractRepository {
             .readFileSync(`${dir}/sql/${file.toLocaleLowerCase()}.sql`)
             .toString();
     }
-    query(entity, page, limit) {
-        return this.execute(this.loadFile(entity), page, limit);
+    query(query, page, limit) {
+        return this.execute(query, page, limit);
     }
     setConnector(connector) {
         this.connector = connector;

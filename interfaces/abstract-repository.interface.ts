@@ -64,8 +64,8 @@ class AbstractRepository {
     return newQuery;
   }
 
-  async count(entity: string): Promise<number> {
-    const resultSet = await this.execute(`SELECT COUNT (*) as total FROM (${this.buildQuery(this.loadFile(entity))})`);
+  async count(query: string): Promise<number> {
+    const resultSet = await this.execute(`SELECT COUNT (*) as total FROM (${this.buildQuery(query)})`);
     const obj:any = {}
     Object.keys(resultSet).map((key) =>  obj[key.toLowerCase()] = resultSet[key])
     return obj[0].total;
@@ -97,8 +97,8 @@ class AbstractRepository {
       .toString();
   }
 
-  query(entity: string, page?: number, limit?: number): any {
-    return this.execute(this.loadFile(entity), page, limit);
+  query(query: string, page?: number, limit?: number): any {
+    return this.execute(query, page, limit);
   }
 
   setConnector(connector: Connector): this {
