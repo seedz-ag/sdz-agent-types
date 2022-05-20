@@ -19,10 +19,12 @@ import Entity from "./interfaces/entity.interface";
 import ERPs from "./enums/erps.enum";
 import FTPInterface from "./interfaces/ftp.interface";
 import HydratorMapping from "./interfaces/hydrator-mapping.interface";
+import { HttpConfig, HttpConfigRequest } from "./interfaces/http.interface";
 import Invoice from "./interfaces/invoice.interface";
 import OpenIdHeaders from "types/open-id-headers.type";
 import PaginationInterface from "./interfaces/pagination.interface";
 import QuestionResponse from "./interfaces/question-response.interface";
+import Sql from "./interfaces/sql.interface";
 
 export {
   AbstractRepository,
@@ -46,8 +48,11 @@ export {
   ERPs,
   FTPInterface,
   HydratorMapping,
+  HttpConfig,
+  HttpConfigRequest,
   Invoice,
   OpenIdHeaders,
   PaginationInterface,
   QuestionResponse,
+  Sql,
 };

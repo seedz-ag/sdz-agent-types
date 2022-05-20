@@ -6,7 +6,9 @@ import ConfigScope from "./config.scope.type";
 
 import ERPs  from "../enums/erps.enum";
 import HydratorMapping from "../interfaces/hydrator-mapping.interface";
+import { HttpConfig } from "interfaces/http.interface";
 import Sql from "../interfaces/sql.interface";
+
 
 
 export type { default as ConfigAuthAPI } from "./config.auth.api.type";
@@ -17,6 +19,7 @@ export type { default as ConfigScope } from "./config.scope.type";
 export type { default as HydratorMapping } from "../interfaces/hydrator-mapping.interface";
 export type { default as Sql } from  "../interfaces/sql.interface";
 
+
 type Config = {
   apiUrl: string;
   connector: string;
@@ -26,7 +29,7 @@ type Config = {
   erp: ERPs,
   fileSize: number;
   ftp: ConfigAuthFTP;
-  http?: any;
+  http?: HttpConfig;
   legacy: boolean;
   mongoUrl?: string;
   issuerUrl?: string;
