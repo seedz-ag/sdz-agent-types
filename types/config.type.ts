@@ -30,6 +30,7 @@ type Config = {
   fileSize: number;
   ftp: ConfigAuthFTP;
   http?: HttpConfig;
+  lastExtraction?: string;
   legacy: boolean;
   mongoUrl?: string;
   issuerUrl?: string;
