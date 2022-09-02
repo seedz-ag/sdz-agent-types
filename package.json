@@ -11,12 +11,14 @@
   "devDependencies": {
     "@commitlint/cli": "8.2.0",
     "@commitlint/config-conventional": "8.2.0",
-    "@types/node": "^16.10.2"
+    "@types/node": "^16.10.2",
+    "husky": "7.0.4"
   },
   "files": [
     "/dist"
   ],
   "scripts": {
-    "build": "tsc --declaration"
+    "build": "tsc --declaration",
+    "prepare": "husky install"
   }
 }
