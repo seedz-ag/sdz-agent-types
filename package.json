@@ -3,6 +3,7 @@
   "version": "1.0.4",
   "main": "./dist/index.js",
   "license": "Apache",
+  "private": true,
   "dependencies": {
     "@types/yargs": "^17.0.8",
     "moment": "^2.29.1",
