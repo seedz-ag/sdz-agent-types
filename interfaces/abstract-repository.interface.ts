@@ -65,7 +65,7 @@ class AbstractRepository {
   }
 
   async count(query: string): Promise<number> {
-    const resultSet = await this.execute(`SELECT COUNT (*) as total FROM (${this.buildQuery(query)})`);
+    const resultSet = await this.execute(`SELECT COUNT(*) as total FROM (${this.buildQuery(query)}) as t1`);
     const obj:any = {}
     Object.keys(resultSet).map((key) =>  obj[key.toLowerCase()] = resultSet[key])
     return obj[0].total;
